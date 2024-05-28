@@ -19,8 +19,8 @@ public class Controller {
 //	private String apiKey;
 
 	@GetMapping("mealplanner/day")
-	public DayResponse getDayMeal(@RequestParam String numCalories, @RequestParam String diet,
-			@RequestParam String exclusions) throws JsonMappingException, JsonProcessingException {
+	public DayResponse getDayMeal(@RequestParam(required = false) String numCalories, @RequestParam(required = false) String diet,
+			@RequestParam(required = false) String exclusions) throws JsonMappingException, JsonProcessingException {
 
 		RestTemplate restTemplate = new RestTemplate();
 		UriComponentsBuilder builder = UriComponentsBuilder
@@ -38,8 +38,8 @@ public class Controller {
 
 	@GetMapping("mealplanner/week")
 
-	public MealPlanResponse getDayMeals(@RequestParam String numCalories, @RequestParam String diet,
-			@RequestParam String exclusions) throws JsonMappingException, JsonProcessingException {
+	public MealPlanResponse getDayMeals(@RequestParam(required = false) String numCalories, @RequestParam(required = false) String diet,
+			@RequestParam(required = false) String exclusions) throws JsonMappingException, JsonProcessingException {
 
 		RestTemplate restTemplate = new RestTemplate();
 		UriComponentsBuilder builder = UriComponentsBuilder
